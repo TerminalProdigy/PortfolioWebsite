@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Portfolio &mdash; Projects, Skills &amp; Contact</title>
+    <meta name="description" content="Developer portfolio showcasing projects, technical skills, and a contact form. Accessible, semantic HTML for SEO and keyboard navigation." />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <a class="sr-only" href="#main">Skip to content</a>
+
+    <header role="banner" aria-label="Site header">
+        <div class="header-inner">
+            <h1 class="site-title">Portfolio</h1>
+
+            <!-- Mobile hamburger toggle -->
+            <button id="nav-toggle" class="nav-toggle" aria-controls="primary-nav" aria-expanded="false" aria-label="Open menu">
+                <!-- simple accessible hamburger icon -->
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="5" width="24" height="2"></rect>
+                    <rect y="11" width="24" height="2"></rect>
+                    <rect y="17" width="24" height="2"></rect>
+                </svg>
+            </button>
+
+            <nav id="primary-nav" class="primary-nav" role="navigation" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="#about-me">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" role="main">
+        <section id="about-me" aria-labelledby="about-heading">
+            <h2 id="about-heading">About Me</h2>
+            <p>
+                I am a software developer focused on building accessible, maintainable web applications.
+                I enjoy designing clear interfaces, writing testable code, and learning modern web and cloud
+                technologies. This portfolio highlights representative projects, core skills, and an easy way
+                to contact me.
+            </p>
+        </section>
+
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <p class="muted">A selection of recent work. Click project titles or images to view repositories, live demos, or preview images.</p>
+
+            <!-- Filters -->
+            <div class="project-filters" role="tablist" aria-label="Project categories">
+                <button type="button" data-category="all" class="filter-btn" aria-pressed="true">All</button>
+                <button type="button" data-category="web" class="filter-btn" aria-pressed="false">Web</button>
+                <button type="button" data-category="ecommerce" class="filter-btn" aria-pressed="false">E-commerce</button>
+                <button type="button" data-category="tooling" class="filter-btn" aria-pressed="false">Tooling</button>
+            </div>
+
+            <div class="projects" role="list">
+                <article role="listitem" aria-labelledby="proj1-title" data-category="web">
+                    <figure>
+                        <img class="project-thumb" src="images/project1.png" alt="Dashboard view of Project One showing charts and navigation" width="800" height="450" />
+                        <figcaption>
+                            <h3 id="proj1-title"><a href="#" rel="noopener">Project One &mdash; Analytics Dashboard</a></h3>
+                            <p>Responsive dashboard built with modern JS, accessible charts, and server-side APIs.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article role="listitem" aria-labelledby="proj2-title" data-category="ecommerce">
+                    <figure>
+                        <img class="project-thumb" src="images/project2.png" alt="Mobile and desktop screenshots of Project Two e-commerce storefront" width="800" height="450" />
+                        <figcaption>
+                            <h3 id="proj2-title"><a href="#" rel="noopener">Project Two &mdash; E-commerce Storefront</a></h3>
+                            <p>Performance-focused storefront with progressive enhancement and secure payments.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <article role="listitem" aria-labelledby="proj3-title" data-category="tooling">
+                    <figure>
+                        <img class="project-thumb" src="images/project3.png" alt="Code editor and preview of Project Three static site generator" width="800" height="450" />
+                        <figcaption>
+                            <h3 id="proj3-title"><a href="#" rel="noopener">Project Three &mdash; Static Site Generator</a></h3>
+                            <p>Lightweight generator with templating and plugin support for fast static sites.</p>
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading">Skills</h2>
+            <div class="skills">
+                <div>
+                    <h3>Languages &amp; Frameworks</h3>
+                    <ul>
+                        <li>C# / .NET 8</li>
+                        <li>JavaScript / TypeScript</li>
+                        <li>React / Blazor</li>
+                        <li>HTML5 &amp; CSS3</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Tools &amp; Practices</h3>
+                    <ul>
+                        <li>RESTful APIs, SignalR</li>
+                        <li>Unit testing &amp; CI/CD</li>
+                        <li>Accessibility (WCAG), SEO</li>
+                        <li>Azure &amp; containerization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <p>If you'd like to get in touch, use the form below or email <a href="mailto:you@example.com">you@example.com</a>.</p>
+
+            <form id="contact-form" action="/api/contact" method="post" aria-label="Contact form" novalidate>
+                <div>
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required aria-required="true" />
+                    <div id="name-error" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <div>
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required aria-required="true" />
+                    <div id="email-error" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    <div id="message-error" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Simple anti-bot honeypot (hidden from users but present in markup) -->
+                <div class="sr-only" aria-hidden="true">
+                    <label for="website">Leave this field empty</label>
+                    <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div>
+                    <button type="submit">Send message</button>
+                </div>
+
+                <div id="contact-status" role="status" aria-live="polite" class="sr-only">Form status messages will appear here.</div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Lightbox modal (hidden by default) -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="lightbox-content" role="document">
+            <button class="lightbox-close" aria-label="Close preview">&times;</button>
+            <img id="lightbox-image" src="" alt="" />
+            <p id="lightbox-caption"></p>
+        </div>
+    </div>
+
+    <footer role="contentinfo" aria-label="Site footer">
+        <p style="margin:0;">&copy; <span id="year"></span> &mdash; Built with accessible, semantic HTML. <a href="/privacy">Privacy</a></p>
+    </footer>
+
+    <script src="scripts/nav-toggle.js"></script>
+    <script src="scripts/projects.js"></script>
+    <script src="scripts/contact-validate.js"></script>
+    <script src="scripts/set-year.js"></script>
+</body>
+</html>
